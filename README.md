@@ -2,7 +2,7 @@
 
 Consul Setup for 3 node cluster, where each node has Ubuntu 16.04 installed.
 
-# Download consul on all nodes
+## 1. Download consul on all nodes
 
 First, on all nodes export variables to be called:
 
@@ -34,7 +34,7 @@ sudo sh -c "echo $node3 'consul-03.example.com consul-03' >> /etc/hosts"
 
 Run `consul -v` to verify installation.
 
-## Edit consul service
+## 2. Edit consul service
 
 Next, on node1 edit the consul service file:
 
@@ -97,7 +97,7 @@ SyslogIdentifier=consul
 WantedBy=multi-user.target
 ```
 
-## Generate consul keys
+## 3. Generate consul keys
 
 On node1 generate the keys:
 
@@ -272,7 +272,7 @@ Again on node3 run:
 }
 ```
 
-## Start consul on all nodes
+## 4. Start consul on all nodes
 
 Run the following commands on all nodes:
 
