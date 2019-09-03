@@ -1,6 +1,8 @@
 # Consul Setup
 
-Consul Setup for 3 node cluster, each node runs Ubuntu 16.04.
+Consul Setup for 3 node cluster, where each node has Ubuntu 16.04 installed.
+
+# Download consul on all nodes
 
 First, on all nodes export variables to be called:
 
@@ -29,6 +31,10 @@ sudo sh -c "echo $node1 'consul-01.example.com consul-01' >> /etc/hosts"
 sudo sh -c "echo $node2 'consul-02.example.com consul-02' >> /etc/hosts"
 sudo sh -c "echo $node3 'consul-03.example.com consul-03' >> /etc/hosts"
 ```
+
+Run `consul -v` to verify installation.
+
+## Edit consul service
 
 Next, on node1 edit the consul service file:
 
@@ -90,6 +96,8 @@ SyslogIdentifier=consul
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Generate consul keys
 
 On node1 generate the keys:
 
@@ -161,6 +169,8 @@ SyslogIdentifier=consul
 WantedBy=multi-user.target
 ```
 
+Again on node2 run:
+
 `sudo vim /etc/consul.d/config.json`
 
 ```
@@ -224,6 +234,7 @@ SyslogIdentifier=consul
 [Install]
 WantedBy=multi-user.target
 ```
+Again on node3 run:
 
 `sudo vim /etc/consul.d/config.json`
 
@@ -260,6 +271,8 @@ WantedBy=multi-user.target
     "ui": true
 }
 ```
+
+## Start consul on all nodes
 
 Run the following commands on all nodes:
 
