@@ -109,8 +109,8 @@ And run the following on each node, replacing the internal ip with the internal 
 
 ```
 {
-    "advertise_addr": "<internal ip of node1>",
-    "bind_addr": "<internal ip of node1>",
+    "advertise_addr": "<internal ip of node>",
+    "bind_addr": "<internal ip of node>",
     "bootstrap_expect": 3,
     "client_addr": "0.0.0.0",
     "datacenter": "KE-DC",
